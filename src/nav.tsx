@@ -9,7 +9,7 @@ export default function Nav() {
             <div className="nav-links">
                 {sectionIds.map(id => (
                     <a key={id} href={`#${id}`} className={activeId === id ? 'active' : ''}>
-                        {id.at(0).toUpperCase() + id.substring(1)}
+                        {id.charAt(0).toUpperCase() + id.substring(1)}
                     </a>
                 ))}
             </div>
