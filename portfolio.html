@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ray Toma — Mechanical Engineering Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+<style>
+  :root {
+    --bg: #F5F3EE;
+    --bg-card: #FFFFFF;
+    --text: #1A1A18;
+    --text-muted: #6B6B65;
+    --text-subtle: #9B9B94;
+    --border: rgba(26,26,24,0.10);
+    --border-strong: rgba(26,26,24,0.20);
+    --accent: #1D3557;
+    --accent-light: #E8EDF4;
+    --accent2: #C2440F;
+    --accent2-light: #FAEDE8;
+    --green: #2A6B3C;
+    --green-light: #E8F4EC;
+    --purple: #4A3A8A;
+    --purple-light: #EEEAF8;
+    --amber: #8A5A0A;
+    --amber-light: #FAF0DC;
+    --radius: 10px;
+    --radius-lg: 16px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  h1,h2,h3,h4 { font-family: 'DM Serif Display', serif; font-weight: 400; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(245,243,238,0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem;
+    height: 56px;
+  }
+  .nav-logo { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--text); letter-spacing: 0.01em; }
+  .nav-links { display: flex; gap: 2px; }
+  .nav-links a {
+    font-size: 13px; color: var(--text-muted); text-decoration: none;
+    padding: 6px 14px; border-radius: 99px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .nav-links a:hover { background: var(--border); color: var(--text); }
+  .nav-links a.active { background: var(--text); color: var(--bg); }
+
+  /* LAYOUT */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+
+  /* HERO */
+  .hero {
+    padding: 6rem 0 5rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .hero-eyebrow {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); background: var(--accent-light);
+    display: inline-block; padding: 4px 14px; border-radius: 99px; margin-bottom: 1.5rem;
+  }
+  .hero h1 { font-size: clamp(42px, 7vw, 72px); line-height: 1.05; color: var(--text); margin-bottom: 1.5rem; }
+  .hero h1 em { font-style: italic; color: var(--text-muted); }
+  .hero-bio { font-size: 17px; color: var(--text-muted); max-width: 600px; line-height: 1.8; margin-bottom: 2rem; }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2.5rem; }
+  .tag {
+    font-size: 12px; padding: 5px 12px; border-radius: 99px;
+    border: 0.5px solid var(--border-strong); color: var(--text-muted);
+    display: flex; align-items: center; gap: 5px;
+  }
+  .hero-badges { display: flex; flex-direction: column; gap: 8px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; padding: 7px 14px; border-radius: var(--radius);
+    width: fit-content;
+  }
+  .badge i { font-size: 15px; }
+  .badge-gold { background: var(--amber-light); color: var(--amber); }
+  .badge-blue { background: var(--accent-light); color: var(--accent); }
+  .badge-purple { background: var(--purple-light); color: var(--purple); }
+
+  /* SECTION */
+  .section { padding: 5rem 0; border-bottom: 0.5px solid var(--border); }
+  .section:last-child { border-bottom: none; }
+  .section-label {
+    font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--text-subtle); margin-bottom: 0.5rem;
+  }
+  .section-title { font-size: clamp(28px, 4vw, 38px); color: var(--text); margin-bottom: 3rem; }
+
+  /* PROJECTS */
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 600px) { .projects-grid { grid-template-columns: 1fr; } }
+  .project-card {
+    background: var(--bg-card); border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg); padding: 1.5rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .project-card:hover { box-shadow: 0 8px 32px rgba(26,26,24,0.08); transform: translateY(-2px); }
+  .project-thumb {
+    width: 100%; height: 96px; border-radius: var(--radius); margin-bottom: 1.25rem;
+    display: flex; align-items: center; justify-content: center; font-size: 34px;
+  }
+  .project-area { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .project-card h3 { font-family: 'DM Serif Display', serif; font-size: 18px; margin-bottom: 8px; color: var(--text); }
+  .project-card p { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 14px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 4px; }
+  .pill {
+    font-size: 11px; padding: 3px 9px; background: var(--bg); border-radius: 99px;
+    color: var(--text-muted); border: 0.5px solid var(--border);
+  }
+
+  /* EXPERIENCE */
+  .exp-card {
+    background: var(--bg-card); border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 16px;
+  }
+  .exp-card.featured { border-color: var(--accent); border-width: 1.5px; }
+  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
+  .exp-title { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--text); }
+  .exp-date { font-size: 12px; color: var(--text-subtle); }
+  .exp-company { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; }
+  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .exp-bullets li { font-size: 13px; color: var(--text-muted); line-height: 1.7; padding-left: 16px; position: relative; }
+  .exp-bullets li::before { content: "–"; position: absolute; left: 0; color: var(--border-strong); }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  @media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr; } }
+  .skills-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-subtle); margin-bottom: 16px; }
+  .skill-bar { margin-bottom: 12px; }
+  .skill-bar-label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 5px; color: var(--text); }
+  .skill-bar-label span:last-child { color: var(--text-subtle); font-size: 12px; }
+  .bar-track { height: 3px; background: var(--border); border-radius: 99px; }
+  .bar-fill { height: 100%; border-radius: 99px; transition: width 1s ease; }
+  .check-list { display: flex; flex-direction: column; gap: 8px; }
+  .check-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text); border-bottom: 0.5px solid var(--border); padding-bottom: 8px; }
+  .check-item:last-child { border-bottom: none; }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  @media (max-width: 600px) { .about-grid { grid-template-columns: 1fr; } }
+  .avatar {
+    width: 68px; height: 68px; border-radius: 50%;
+    background: var(--accent-light); display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--accent); margin-bottom: 1.25rem;
+  }
+  .about-text p { font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; }
+  .info-row { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 0.5px solid var(--border); }
+  .info-row:last-child { border-bottom: none; }
+  .info-row i { font-size: 16px; color: var(--text-subtle); margin-top: 2px; flex-shrink: 0; }
+  .info-label { font-size: 11px; color: var(--text-subtle); }
+  .info-val { font-size: 13px; color: var(--text); font-weight: 500; }
+
+  /* CONTACT */
+  .contact-card {
+    background: var(--bg-card); border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg); padding: 1.5rem; max-width: 420px;
+  }
+  .contact-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 0.5px solid var(--border); }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row i { font-size: 18px; color: var(--text-muted); }
+  .contact-row a, .contact-row span { font-size: 13px; color: var(--text); text-decoration: none; }
+  .contact-row a:hover { color: var(--accent); }
+
+  /* FOOTER */
+  footer { padding: 2rem; text-align: center; font-size: 12px; color: var(--text-subtle); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  .hero > * { animation: fadeUp 0.6s ease both; }
+  .hero > *:nth-child(2) { animation-delay: 0.08s; }
+  .hero > *:nth-child(3) { animation-delay: 0.16s; }
+  .hero > *:nth-child(4) { animation-delay: 0.22s; }
+  .hero > *:nth-child(5) { animation-delay: 0.28s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Ray Toma</div>
+  <div class="nav-links">
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Georgia Tech — Mechanical Engineering, Class of 2027</div>
+    <h1>Ray Toma<br><em>builds things.</em></h1>
+    <p class="hero-bio">
+      Mechanical engineering student at Georgia Tech with industry experience in automotive R&D, manufacturing, and fabrication. I design systems, run FEA, write Python, and machine my own parts — and I bring that same hands-on drive everywhere I work. Bilingual in English and Japanese (JLPT N1).
+    </p>
+    <div class="hero-tags">
+      <span class="tag"><i class="ti ti-vector" aria-hidden="true"></i> CAD / Design</span>
+      <span class="tag"><i class="ti ti-chart-area" aria-hidden="true"></i> Structural FEA</span>
+      <span class="tag"><i class="ti ti-tool" aria-hidden="true"></i> Manufacturing</span>
+      <span class="tag"><i class="ti ti-robot" aria-hidden="true"></i> Robotics</span>
+      <span class="tag"><i class="ti ti-code" aria-hidden="true"></i> Python / Arduino</span>
+    </div>
+    <div class="hero-badges">
+      <div class="badge badge-gold"><i class="ti ti-trophy" aria-hidden="true"></i> 1st place — Orlando MakerFaire 500g autonomous division (22 teams)</div>
+      <div class="badge badge-blue"><i class="ti ti-building-factory" aria-hidden="true"></i> Co-op at Novelis Inc. — Automotive R&D</div>
+      <div class="badge badge-purple"><i class="ti ti-printer" aria-hidden="true"></i> 3D Printing Master — Georgia Tech Hive Makerspace</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+  <div class="container">
+    <div class="section-label">Work</div>
+    <div class="section-title">Projects</div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-thumb" style="background:var(--purple-light);"><i class="ti ti-robot" style="color:var(--purple);font-size:36px;" aria-hidden="true"></i></div>
+        <div class="project-area" style="color:var(--purple);">Robotics / Mechatronics</div>
+        <h3>RoboJackets — 500g Combat Robot</h3>
+        <p>Mechanical lead for a 10×10cm autonomous and RC combat bot. Designed the chassis to house 5 IR sensors, 2 light sensors, 2 motors, battery, and PCB. Fabricated custom aluminum and steel parts with fiber laser, waterjet, and manual mill. Placed 1st at Orlando MakerFaire in a 22-team field.</p>
+        <div class="pills">
+          <span class="pill">SolidWorks</span><span class="pill">Onshape</span><span class="pill">Fiber Laser</span><span class="pill">Waterjet</span><span class="pill">Manual Mill</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb" style="background:var(--amber-light);"><i class="ti ti-device-gamepad-2" style="color:var(--amber);font-size:36px;" aria-hidden="true"></i></div>
+        <div class="project-area" style="color:var(--amber);">Design / Electronics</div>
+        <h3>Sound Voltex Arcade Controller</h3>
+        <p>Designed and fabricated a custom portable arcade controller from scratch — parts cut with CO2 and fiber laser cutters and 3D printers. Hand-soldered a custom circuit connecting buttons and optical rotary encoders to a microcontroller, programmed via Arduino IDE. Full process documented on GitHub.</p>
+        <div class="pills">
+          <span class="pill">SolidWorks</span><span class="pill">Arduino</span><span class="pill">Laser Cutting</span><span class="pill">Cirkit Designer</span><span class="pill">GitHub</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb" style="background:var(--accent-light);"><i class="ti ti-settings-automation" style="color:var(--accent);font-size:36px;" aria-hidden="true"></i></div>
+        <div class="project-area" style="color:var(--accent);">Robotics / Manufacturing</div>
+        <h3>Multi-Purpose Autonomous Robot</h3>
+        <p>Fabrication lead on a team competition robot built to lift a 3" object 5 feet from the ground. Contributed 100+ hours across SolidWorks CAD, hardware fabrication, and validation testing. Seeded 2nd and finished top 16 of 60+ teams. Used FMEA, HoQ, and spec sheets to support design decisions.</p>
+        <div class="pills">
+          <span class="pill">SolidWorks</span><span class="pill">FMEA</span><span class="pill">HoQ</span><span class="pill">Fabrication</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb" style="background:var(--accent2-light);"><i class="ti ti-chart-area" style="color:var(--accent2);font-size:36px;" aria-hidden="true"></i></div>
+        <div class="project-area" style="color:var(--accent2);">Structural FEA</div>
+        <h3>Waste Baler Extension — Pratt Industries</h3>
+        <p>Designed and FEA-validated a baler extension under 1,000+ lbf loads in SimScale. Coordinated directly with in-house fabricators on build and installation. The extension improved baler performance by 30% by increasing volume per truck load.</p>
+        <div class="pills">
+          <span class="pill">SimScale</span><span class="pill">Onshape</span><span class="pill">Static FEA</span><span class="pill">GD&T</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section" id="experience">
+  <div class="container">
+    <div class="section-label">Career</div>
+    <div class="section-title">Experience</div>
+
+    <div class="exp-card featured">
+      <div style="margin-bottom:10px;"><span class="badge badge-blue" style="font-size:11px;padding:3px 10px;">Co-op</span></div>
+      <div class="exp-header">
+        <div class="exp-title">Automotive Roadmap R&D Co-op</div>
+        <div class="exp-date">Jun 2025 – Dec 2025</div>
+      </div>
+      <div class="exp-company">Novelis Inc. — Kennesaw, GA</div>
+      <ul class="exp-bullets">
+        <li>Researched value-in-use of aluminum lightweighting for vehicle fuel efficiency, sustainability, and market positioning — presented to automotive OEMs including Volkswagen and Honda.</li>
+        <li>Analyzed material types and weights across 600+ vehicle body parts and battery enclosures in Python.</li>
+        <li>Built linear and power regression models using 950+ data points from A2MAC1 to estimate mass influence coefficients.</li>
+        <li>Modeled lightweighting effects on range, MPGe, and CO2 for ICE, BEV, and hybrid vehicles using NREL FASTSim — achieved 15% weight reduction and +10% fuel economy.</li>
+        <li>Created graphics presented at the Euro Car Body conference.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-title">Mechanical Engineer Intern</div>
+        <div class="exp-date">May 2024 – Aug 2024</div>
+      </div>
+      <div class="exp-company">Pratt Industries, Paper Mill Division — Conyers, GA</div>
+      <ul class="exp-bullets">
+        <li>Designed a baler extension improving throughput by 30%; coordinated fabrication and installation with in-house team.</li>
+        <li>Performed static FEA on baler extension under 1,000+ lbf loads in SimScale to verify deformation and safety factors.</li>
+        <li>Reverse-engineered a $4,000 sensor housing in Onshape; created engineering drawings and sourced vendor fabrication.</li>
+        <li>Updated P&IDs with isolation valves for steam lines in AutoCAD 2D.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-title">3D Printing Master Peer Instructor</div>
+        <div class="exp-date">Jan 2023 – Present</div>
+      </div>
+      <div class="exp-company">Hive Makerspace, Georgia Tech — Atlanta, GA</div>
+      <ul class="exp-bullets">
+        <li>Oversees operations and maintenance of 25+ machines producing 4,000+ prints annually.</li>
+        <li>Trained 60+ peer instructors on FDM, SLA, and PolyJet printing (Ultimakers, Stratasys F170/J55, Bambu, Formlabs).</li>
+        <li>Supports 250+ daily end-users across laser cutters, 3D printers, soldering stations, and oscilloscopes.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="section" id="skills">
+  <div class="container">
+    <div class="section-label">Capabilities</div>
+    <div class="section-title">Technical skills</div>
+    <div class="skills-grid">
+      <div>
+        <div class="skills-label">Software & CAD</div>
+        <div class="skill-bar"><div class="skill-bar-label"><span>SolidWorks</span><span>Expert</span></div><div class="bar-track"><div class="bar-fill" style="width:90%;background:var(--accent);"></div></div></div>
+        <div class="skill-bar"><div class="skill-bar-label"><span>Onshape</span><span>Advanced</span></div><div class="bar-track"><div class="bar-fill" style="width:80%;background:var(--accent);"></div></div></div>
+        <div class="skill-bar"><div class="skill-bar-label"><span>SimScale (FEA)</span><span>Intermediate</span></div><div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--accent2);"></div></div></div>
+        <div class="skill-bar"><div class="skill-bar-label"><span>AutoCAD 2D</span><span>Intermediate</span></div><div class="bar-track"><div class="bar-fill" style="width:60%;background:var(--accent);"></div></div></div>
+        <div class="skill-bar"><div class="skill-bar-label"><span>Siemens NX</span><span>Beginner</span></div><div class="bar-track"><div class="bar-fill" style="width:35%;background:var(--accent);"></div></div></div>
+
+        <div class="skills-label" style="margin-top:2rem;">Programming</div>
+        <div class="skill-bar"><div class="skill-bar-label"><span>Python</span><span>Advanced</span></div><div class="bar-track"><div class="bar-fill" style="width:78%;background:var(--green);"></div></div></div>
+        <div class="skill-bar"><div class="skill-bar-label"><span>Arduino / C</span><span>Intermediate</span></div><div class="bar-track"><div class="bar-fill" style="width:62%;background:var(--green);"></div></div></div>
+        <div class="skill-bar"><div class="skill-bar-label"><span>MATLAB</span><span>Intermediate</span></div><div class="bar-track"><div class="bar-fill" style="width:55%;background:var(--green);"></div></div></div>
+        <div class="skill-bar"><div class="skill-bar-label"><span>Java / C++</span><span>Beginner</span></div><div class="bar-track"><div class="bar-fill" style="width:35%;background:var(--green);"></div></div></div>
+      </div>
+      <div>
+        <div class="skills-label">Fabrication & machinery</div>
+        <div class="check-list">
+          <div class="check-item"><i class="ti ti-check" style="color:var(--green);font-size:14px;" aria-hidden="true"></i>FDM, SLA & PolyJet 3D printing</div>
+          <div class="check-item"><i class="ti ti-check" style="color:var(--green);font-size:14px;" aria-hidden="true"></i>CO2 & fiber laser cutting</div>
+          <div class="check-item"><i class="ti ti-check" style="color:var(--green);font-size:14px;" aria-hidden="true"></i>Waterjet cutting</div>
+          <div class="check-item"><i class="ti ti-check" style="color:var(--green);font-size:14px;" aria-hidden="true"></i>Manual mill & lathe</div>
+          <div class="check-item"><i class="ti ti-check" style="color:var(--green);font-size:14px;" aria-hidden="true"></i>Soldering & PCB assembly</div>
+          <div class="check-item"><i class="ti ti-check" style="color:var(--green);font-size:14px;" aria-hidden="true"></i>GD&T & engineering drawings</div>
+          <div class="check-item"><i class="ti ti-check" style="color:var(--green);font-size:14px;" aria-hidden="true"></i>P&ID documentation (AutoCAD)</div>
+          <div class="check-item"><i class="ti ti-check" style="color:var(--green);font-size:14px;" aria-hidden="true"></i>ProtoMat & ProtoLaser PCB routing</div>
+        </div>
+        <div class="skills-label" style="margin-top:2rem;">Languages</div>
+        <div class="check-list">
+          <div class="check-item"><i class="ti ti-language" style="font-size:14px;color:var(--text-muted);" aria-hidden="true"></i>English — Native</div>
+          <div class="check-item"><i class="ti ti-language" style="font-size:14px;color:var(--text-muted);" aria-hidden="true"></i>Japanese — Native (JLPT N1)</div>
+        </div>
+        <div class="skills-label" style="margin-top:2rem;">Coursework highlights</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <span class="pill">Machine Design</span><span class="pill">System Dynamics</span><span class="pill">Heat Transfer</span><span class="pill">Thermodynamics</span><span class="pill">Fluid Mechanics</span><span class="pill">Mechanics of Materials</span><span class="pill">Numerical Methods</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+  <div class="container">
+    <div class="section-label">Background</div>
+    <div class="section-title">About me</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="avatar">RT</div>
+        <p>I'm a mechanical engineering student at Georgia Tech (Class of 2027) with a minor in Computer Science. I'm drawn to work that bridges the physical and digital — whether that's running Python regression models on automotive lightweighting data at Novelis or wiring up a custom arcade controller from scratch.</p>
+        <p>At the Hive Makerspace, I've spent hundreds of hours helping students bring ideas to life — and doing the same with my own projects through RoboJackets and personal builds. I believe the best engineers are also capable fabricators.</p>
+        <p>Fluent in both English and Japanese (native level, JLPT N1), and currently holding an FCC Technician license (KR4HZK). Open to opportunities in R&D, robotics, or manufacturing engineering.</p>
+      </div>
+      <div>
+        <div class="info-row"><i class="ti ti-school" aria-hidden="true"></i><div><div class="info-label">University</div><div class="info-val">Georgia Institute of Technology</div></div></div>
+        <div class="info-row"><i class="ti ti-certificate" aria-hidden="true"></i><div><div class="info-label">Degree</div><div class="info-val">B.S. Mechanical Engineering + CS Minor</div></div></div>
+        <div class="info-row"><i class="ti ti-calendar" aria-hidden="true"></i><div><div class="info-label">Expected graduation</div><div class="info-val">May 2027</div></div></div>
+        <div class="info-row"><i class="ti ti-star" aria-hidden="true"></i><div><div class="info-label">GPA</div><div class="info-val">3.7 / 4.0</div></div></div>
+        <div class="info-row"><i class="ti ti-map-pin" aria-hidden="true"></i><div><div class="info-label">Location</div><div class="info-val">Atlanta, GA — open to relocation</div></div></div>
+        <div class="info-row"><i class="ti ti-antenna" aria-hidden="true"></i><div><div class="info-label">FCC License</div><div class="info-val">Technician class — KR4HZK</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <div class="container">
+    <div class="section-label">Reach out</div>
+    <div class="section-title">Contact</div>
+    <div class="contact-card">
+      <div class="contact-row"><i class="ti ti-phone" aria-hidden="true"></i><span>706-315-1266</span></div>
+      <div class="contact-row"><i class="ti ti-mail" aria-hidden="true"></i><a href="mailto:rmtoma024@gmail.com">rmtoma024@gmail.com</a></div>
+      <div class="contact-row"><i class="ti ti-brand-linkedin" aria-hidden="true"></i><a href="https://linkedin.com/in/ray-toma-8208811a0" target="_blank" rel="noopener">linkedin.com/in/ray-toma-8208811a0</a></div>
+      <div class="contact-row" style="border-bottom:none;"><i class="ti ti-map-pin" aria-hidden="true"></i><span>Atlanta, GA — open to relocation</span></div>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 Ray Toma — Mechanical Engineering Portfolio</footer>
+
+<script>
+  const sections = document.querySelectorAll('.section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
+    navLinks.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
