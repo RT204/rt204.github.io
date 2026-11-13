@@ -10,9 +10,9 @@ export default function Experience() {
                 <div className="exp-card featured">
                     <div className="exp-header">
                         <div className="exp-title">Automotive Roadmap R&D Internship</div>
-                        <div className="exp-date">Jun 20xx – Dec 20xx</div>
+                        <div className="exp-date">Jun 2025 – Dec 2025</div>
                     </div>
-                    <div className="exp-company">Kuruma, Co. - Tokyo, Japan</div>
+                    <div className="exp-company">Novelis Inc. - Kennesaw, GA</div>
                     <ul className="exp-bullets blurred">
                         <li>Researched value-in-use of aluminum lightweighting for vehicle fuel efficiency, sustainability, and market positioning — presented to automotive OEMs including Volkswagen and Honda.</li>
                         <li>Analyzed material types and weights across 600+ vehicle body parts and battery enclosures in Python.</li>

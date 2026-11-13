@@ -16,7 +16,7 @@ export default function App() {
             <Skills />
             <About />
             <Contact />
-            <footer>© 2026 John Smith — Mechanical Engineering Portfolio</footer>
+            <footer>© 2026 Ray Toma — Mechanical Engineering Portfolio</footer>
         </>
     );
 }
