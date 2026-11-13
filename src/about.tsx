@@ -8,7 +8,7 @@ export default function About() {
                 <div className="about-grid">
                     <div className="about-text">
                         <div className="avatar">RT</div>
-                        <p>I'm a mechanical engineering student at Shinshu University (Class of 20xx) with a minor in Computer Science. I'm drawn to work that bridges the physical and digital — whether that's running Python regression models on automotive lightweighting data or wiring up a custom arcade controller from scratch.</p>
+                        <p>I'm a mechanical engineering student at Georgia Institute of Technology (Class of 2026) with a minor in Computing & Embedded Devices. I'm drawn to work that bridges the physical and digital — whether that's running Python regression models on automotive lightweighting data or wiring up a custom arcade controller from scratch.</p>
                         <p>At the Maker Lab, I've spent hundreds of hours helping students bring ideas to life — and doing the same with my own projects through RoboKen and personal builds. I believe the best engineers are also capable fabricators.</p>
                         <p>Fluent in both English and Japanese (native level, JLPT N1), and currently holding an FCC Technician license. Open to opportunities in R&D, robotics, or manufacturing engineering.</p>
                     </div>

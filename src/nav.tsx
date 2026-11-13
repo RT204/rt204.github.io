@@ -5,7 +5,7 @@ export default function Nav() {
     const activeId = useScrollSpy(sectionIds);
     return (
         <nav>
-            <div className="nav-logo">John Smith</div>
+            <div className="nav-logo">Ray Toma</div>
             <div className="nav-links">
                 {sectionIds.map(id => (
                     <a key={id} href={`#${id}`} className={activeId === id ? 'active' : ''}>
