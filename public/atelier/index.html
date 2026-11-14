@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" data-motion="on" data-light="afternoon">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3e9">
+  <meta name="description" content="Ray Toma's sunlit corner of the internet. Mechanical engineering, robotics, and things made by hand.">
+  <title>Ray Toma — The Atelier</title>
+  <link rel="icon" href="./assets/leaf.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400&text=%E6%9C%A8%E6%BC%8F%E3%82%8C%E6%97%A5%E5%A5%BD%E5%A5%87%E5%BF%83%E6%9C%AC%E8%AA%9E" rel="stylesheet">
+  <link rel="preload" as="image" href="./assets/atelier-scene.webp">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./atelier.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-diagonal" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 20c0-7 5-11 13-15M5 17C-1 9 10 2 21 3c0 11-6 18-14 14"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v2m0 18v2M1 12h2m18 0h2M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="m10 5-5 4H2v6h3l5 4V5Zm4 3c3 2 3 6 0 8m3-11c5 4 5 10 0 14"/></symbol>
+    <symbol id="i-motion" viewBox="0 0 24 24"><path d="M3 8h11a3 3 0 1 0-3-3M2 12h17a3 3 0 1 1-3 3M5 16h4a3 3 0 1 1-3 3"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><path d="M12 2v5m0 10v5M2 12h5m10 0h5"/></symbol>
+  </defs></svg>
+  <a class="skip-link" href="#work">Skip to selected work</a>
+  <div class="study-bar">
+    <span><span class="tiny-star">✳</span> A little design experiment <span class="study-extra">/ 木漏れ日</span></span>
+    <div class="ab-switch" aria-label="Compare portfolio designs"><a href="/">A <span>Original</span></a><span class="selected" aria-current="page">B <span>Atelier</span></span></div>
+  </div>
+  <header class="site-header wrap">
+    <a class="wordmark" href="#home" aria-label="Ray Toma, back to top"><span class="brand-seal">rt<span>✳</span></span><span>Ray Toma<small>ENGINEER & MAKER</small></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="#work">Selected work <span>01</span></a><a href="#maker">The maker <span>02</span></a><a href="#notes">Field notes <span>03</span></a></nav>
+    <a class="header-cta" href="https://github.com/RT204" target="_blank" rel="noopener noreferrer">Say hello <svg class="icon"><use href="#i-diagonal"/></svg></a>
+  </header>
+
+  <main id="home">
+    <section class="garden" aria-labelledby="hero-title">
+      <div class="scene" aria-hidden="true"><div class="scene-picture"></div><div class="scene-wash"></div><div class="sunbeam sunbeam-one"></div><div class="sunbeam sunbeam-two"></div><div class="garden-shadow"></div><div class="leaves"></div><div class="motes"></div></div>
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow"><span class="status-dot"></span> WELCOME TO MY LITTLE ATELIER</p>
+        <h1 id="hero-title">A little <em>curiosity.</em><br>A lot of <em>making.</em></h1>
+        <p class="hero-description">I’m Ray, a mechanical engineer in the making.<br>Turning sketches, code, and a few too many<br class="desktop-break"> cups of coffee into things that work.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#work">Explore my work <svg class="icon"><use href="#i-arrow"/></svg></a><a class="text-link" href="#maker">Meet the maker <span>↗</span></a></div>
+        <div class="hero-location"><svg class="icon crosshair" aria-hidden="true"><use href="#i-target"/></svg><span>GEORGIA TECH · MECHANICAL ENGINEERING</span></div>
+      </div>
+      <div class="character-wrap" aria-hidden="true"><div class="character-shadow"></div><div class="character"><img class="character-body" src="./assets/miku.webp" alt="" width="1024" height="1536" fetchpriority="high"><img class="character-hair" src="./assets/miku.webp" alt="" width="1024" height="1536"></div><div class="character-spark">✧</div></div>
+      <p class="scene-note">a little company<br>for the journey <span>⤴</span></p>
+      <div class="garden-bottom"><span class="scene-coordinate"><span class="status-dot"></span> SOMEWHERE BETWEEN IDEAS & REALITY</span><div class="scene-controls" aria-label="Scene controls"><button id="motion-toggle" type="button" aria-pressed="true"><svg class="icon"><use href="#i-motion"/></svg><span>Motion on</span></button><button id="light-toggle" type="button" aria-pressed="false"><svg class="icon"><use href="#i-sun"/></svg><span>Afternoon</span></button><button id="sound-toggle" type="button" aria-pressed="false"><svg class="icon"><use href="#i-sound"/></svg><span>Sound off</span></button></div></div>
+      <a class="scroll-invitation" href="#work" aria-label="Scroll to selected work"><span></span>WANDER A LITTLE</a>
+    </section>
+
+    <div class="interlude wrap"><span>DESIGN. BUILD. FIGURE IT OUT.</span><p>Good things start with <em>“what if?”</em></p><span class="interlude-mark">✳</span></div>
+
+    <section id="work" class="work-section wrap" aria-labelledby="work-title">
+      <div class="section-top reveal"><div><p class="eyebrow">01 / FROM THE WORKBENCH</p><h2 id="work-title">Things I’ve <em>made.</em></h2></div><p class="section-aside">A few favorite projects. Real parts,<br>real constraints, a lot of iteration.</p></div>
+      <div class="work-toolbar reveal"><div class="filters" role="group" aria-label="Filter projects"><button class="active" data-filter="all" aria-pressed="true">Everything <sup>04</sup></button><button data-filter="mechanical" aria-pressed="false">Mechanical</button><button data-filter="robotics" aria-pressed="false">Robotics</button><button data-filter="electronics" aria-pressed="false">Electronics</button></div><span class="toolbar-note">A COLLECTION, ALWAYS GROWING ↙</span></div>
+      <p id="filter-status" class="sr-only" aria-live="polite">Showing all 4 projects</p>
+      <div class="project-grid">
+        <article class="work-piece piece-baler reveal" data-category="mechanical"><button class="project-open" data-project="baler" aria-label="Explore the Baler Extension project"><div class="photo-mat mat-sage"><div class="photo-label">FIELD STUDY / 01</div><img src="./assets/baler-full.jpg" width="1000" height="750" loading="lazy" alt="Industrial baler extension installed at the paper mill"><span class="photo-corner">DESIGNED → FABRICATED → INSTALLED</span><span class="open-circle"><svg class="icon"><use href="#i-diagonal"/></svg></span></div><div class="piece-caption"><div><p class="project-kind">MECHANICAL DESIGN · FEA</p><h3>A bigger idea for a baler.</h3><p>Small change. More room to work.</p></div><span class="project-number">01</span></div></button></article>
+        <article class="work-piece piece-robot reveal" data-category="robotics"><button class="project-open" data-project="robot" aria-label="Explore the Sumo Robots project"><div class="photo-mat mat-blue"><span class="paper-tape"></span><div class="photo-label">SMALL ROBOT. BIG PERSONALITY.</div><img src="./assets/robot-layout.jpg" width="1000" height="750" loading="lazy" alt="CAD layout of a compact sumo robot"><span class="technical-ring" aria-hidden="true"></span><span class="open-circle"><svg class="icon"><use href="#i-diagonal"/></svg></span></div><div class="piece-caption"><div><p class="project-kind">ROBOTICS · FABRICATION</p><h3>Built for a little pushback.</h3><p>Sumo robots, from CAD to competition.</p></div><span class="project-number">02</span></div></button></article>
+        <article class="work-piece piece-controller reveal" data-category="electronics"><button class="project-open" data-project="controller" aria-label="Explore the SDVX Controller project"><div class="photo-mat mat-peach"><div class="photo-label">SIDE PROJECT / ON REPEAT ♫</div><img src="./assets/sdvx-top.jpg" width="1000" height="750" loading="lazy" alt="Handmade Sound Voltex arcade controller with buttons and rotary knobs"><span class="photo-corner">MADE FOR THE LOVE OF THE GAME</span><span class="open-circle"><svg class="icon"><use href="#i-diagonal"/></svg></span></div><div class="piece-caption"><div><p class="project-kind">ELECTRONICS · PERSONAL PROJECT</p><h3>A rhythm of my own.</h3><p>An arcade experience, built from scratch.</p></div><span class="project-number">03</span></div></button></article>
+        <article class="work-piece piece-sensor reveal" data-category="mechanical"><button class="project-open" data-project="sensor" aria-label="Explore the Sensor Bracket project"><div class="photo-mat mat-paper"><div class="photo-label">LOOK CLOSER. MAKE IT BETTER.</div><img src="./assets/sensor-cad.jpg" width="1000" height="750" loading="lazy" alt="Onshape CAD assembly of a reverse-engineered sensor bracket"><span class="drawing-cross cross-one" aria-hidden="true">+</span><span class="drawing-cross cross-two" aria-hidden="true">+</span><span class="open-circle"><svg class="icon"><use href="#i-diagonal"/></svg></span></div><div class="piece-caption"><div><p class="project-kind">REVERSE ENGINEERING · GD&T</p><h3>Rethinking the small things.</h3><p>A better way to replace a worn-out bracket.</p></div><span class="project-number">04</span></div></button></article>
+      </div>
+      <div class="work-bottom reveal"><span>LESS PERFECT ON PAPER. BETTER IN THE REAL WORLD.</span><a class="text-link" href="/projects">The full project archive <span>↗</span></a></div>
+    </section>
+
+    <section id="maker" class="maker-section" aria-labelledby="maker-title"><div class="maker-layout wrap">
+      <div class="maker-visual reveal"><div class="maker-image"><img src="./assets/atelier-scene.webp" alt="A sunlit, plant-filled Japanese café atelier with a small robot on the workbench" loading="lazy" width="1536" height="1024"></div><span class="maker-stamp">好奇心<br><small>STAY CURIOUS</small></span><div class="handwritten">a space to make things.<br>and make a few mistakes.</div><span class="visual-index">FIG. 02 — THE STATE OF MIND</span></div>
+      <div class="maker-copy reveal"><p class="eyebrow">02 / THE PERSON BEHIND THE PARTS</p><h2 id="maker-title">Engineer by study.<br><em>Maker by nature.</em></h2><p>I’m studying mechanical engineering at Georgia Tech, drawn to the place where physical things meet digital ideas.</p><p>Some days that means running regression models on automotive lightweighting. Others, it’s machining a robot chassis, wiring a controller, or helping someone turn their first CAD model into a real part.</p><p>I like the whole process. The rough sketch. The stubborn problem. The moment it finally works.</p><div class="maker-facts"><span>CAD & FABRICATION</span><span>ROBOTICS & EMBEDDED</span><span>ENGLISH / 日本語</span></div><a class="text-link" href="https://github.com/RT204" target="_blank" rel="noopener noreferrer">Find me on GitHub <span>↗</span></a></div>
+    </div></section>
+
+    <section id="notes" class="notes-section wrap" aria-labelledby="notes-title"><div class="section-top reveal"><div><p class="eyebrow">03 / NOTES IN THE MARGIN</p><h2 id="notes-title">How I like to <em>work.</em></h2></div><span class="hand-drawn-star" aria-hidden="true">✳</span></div><div class="notes-grid">
+      <details class="field-note reveal" open><summary><span class="note-number">NOTE 001</span><h3>Think with your hands.</h3><svg class="icon"><use href="#i-plus"/></svg></summary><p>A prototype asks better questions than a perfect rendering. Build something early, learn what feels wrong, and let the next iteration answer.</p><span class="note-sketch sketch-orbit" aria-hidden="true">↻</span></details>
+      <details class="field-note reveal"><summary><span class="note-number">NOTE 002</span><h3>Follow the small details.</h3><svg class="icon"><use href="#i-plus"/></svg></summary><p>A tolerance, a fastener, a wire that needs a little more room. The small decisions are often where a design starts to feel considered.</p><span class="note-sketch" aria-hidden="true"><svg class="icon"><use href="#i-target"/></svg></span></details>
+      <details class="field-note reveal"><summary><span class="note-number">NOTE 003</span><h3>Leave room for play.</h3><svg class="icon"><use href="#i-plus"/></svg></summary><p>A controller built for a favorite game. A robot that fits in your hand. Personal projects keep the curiosity alive, and the learning follows.</p><span class="note-sketch" aria-hidden="true">♫</span></details>
+    </div></section>
+
+    <section class="closing wrap reveal" aria-labelledby="closing-title"><p class="eyebrow"><span class="status-dot"></span> ALWAYS UP FOR AN INTERESTING PROBLEM</p><h2 id="closing-title">Have a little <em>“what if?”</em><br>Let’s see where it goes.</h2><a class="button button-dark" href="https://github.com/RT204" target="_blank" rel="noopener noreferrer">Find me on GitHub <svg class="icon"><use href="#i-diagonal"/></svg></a><span class="closing-flower" aria-hidden="true">✳</span></section>
+  </main>
+  <footer class="site-footer wrap"><a class="footer-name" href="#home">Ray Toma <span>© 2026</span></a><span>MADE WITH CURIOSITY, AND A LITTLE SUNLIGHT.</span><a class="back-top" href="#home">BACK TO TOP ↑</a></footer>
+  <div class="studio-colophon wrap"><span>木漏れ日 <i>komorebi</i> — sunlight filtering through leaves.</span><span id="local-clock"></span></div>
+
+  <dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-inner"><button class="dialog-close" aria-label="Close project details"><svg class="icon"><use href="#i-close"/></svg></button><p class="eyebrow" id="dialog-label"></p><h2 id="dialog-title"></h2><img id="dialog-image" src="./assets/baler-full.jpg" alt=""><p id="dialog-description"></p><div id="dialog-facts"></div><a id="dialog-link" class="text-link" href="/projects">Read the full project <span>↗</span></a></div></dialog>
+</body>
+</html>
