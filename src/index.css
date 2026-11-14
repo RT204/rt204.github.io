@@ -571,10 +571,6 @@ footer {
   animation-delay: 0.28s;
 }
 
-.blurred {
-  filter: blur(4px);
-}
-
 /* PROJECTS PAGE STYLES */
 .page-header {
   padding: 4rem 0 3rem;
