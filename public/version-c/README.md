@@ -4,7 +4,7 @@ Isolated prototype at `/version-c/`. A and B are unchanged. Delete only `public/
 
 ## Pages
 
-- `/version-c/`: project-first overview with filters, technical capabilities, experience, education, a small animated companion, and contact links.
+- `/version-c/`: projects, experience (02), technical skills (03), and about/education. Project cards include Ray's role and two specific technical contributions. The résumé has prominent buttons in the header, introduction, and about panel.
 - `/version-c/projects/`: all four case studies.
 - `/version-c/projects/?project=baler` (also `robots`, `sensor`, `sdvx`): dedicated project pages. Query URLs load correctly on GitHub Pages without SPA fallback rules.
 - `/version-c/resume.html`: curated résumé with a print/save-PDF layout. The original WIP PDF is not included in the public directory.
@@ -36,3 +36,5 @@ No analytics, visitor assignment, autoplay audio, fake endorsements, placeholder
 Use the existing Vite dev server and visit `http://localhost:5173/version-c/`. Production uses the existing build command and GitHub Pages workflow. On Linux, use native Linux dependencies for verification; do not replace the user's Windows `node_modules/` unnecessarily.
 
 Browser verification covered all filters, card navigation, direct case-study reloads, all gallery image dialogs and keyboard focus restoration, the library and unknown-project state, motion persistence, reduced motion, and résumé printing. Layouts were checked at 320, 390, 768, 1024, and 1440 pixels without horizontal overflow, missing assets, or JavaScript errors.
+
+The revised C design uses an open circular RT monogram instead of the square badge, factual headings and descriptions, expanded project cards on both the homepage and project library, and no navigation links to the Atelier. Styles, scripts, and the mark use `?v=2` to refresh browser caches after this revision.

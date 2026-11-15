@@ -30,19 +30,22 @@ h1, h2, h3, h4 { font-weight: 550; line-height: 1.14; }
 .site-header { position: sticky; top: 0; z-index: 50; background: #f4f5f1ed; backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
 .header-inner { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .brand { display: flex; align-items: center; gap: 13px; font-size: 17px; font-weight: 650; line-height: 1; letter-spacing: -.04em; }
-.brand-mark { width: 39px; height: 39px; background: #234c40; color: #eef2e8; display: flex; align-items: center; justify-content: center; font: 15px var(--mono); letter-spacing: -.1em; }
-.brand-mark > span { color: #96ba9f; margin-inline: 1px; }
+.brand-mark { width: 46px; height: 46px; flex-shrink: 0; }
 .brand small { display: block; margin-top: 8px; font: 7px var(--mono); letter-spacing: .04em; color: var(--muted); }
 .site-header nav { display: flex; align-items: center; gap: 30px; }
 .site-header nav a { font-size: 11px; position: relative; padding-block: 10px; color: #616d66; }
 .site-header nav a:hover, .site-header nav a.nav-active { color: var(--green); }
 .site-header nav a.nav-active::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--green); }
-.header-resume { font-size: 10px; padding: 9px 14px; border: 1px solid #bbc7bb; display: flex; gap: 25px; align-items: center; transition: background .2s, color .2s; }
-.header-resume:hover { background: var(--green); color: white; }
+.header-resume { font-size: 11px; font-weight: 550; padding: 11px 18px; min-height: 43px; background: var(--green); color: white; border: 1px solid var(--green); display: flex; gap: 25px; align-items: center; transition: background .2s, color .2s; }
+.header-resume:hover { background: #193f33; }
 .hero { display: grid; grid-template-columns: 1.45fr 1fr; gap: 50px; align-items: center; padding-block: 62px 55px; }
 .hero-copy h1 { font-size: clamp(42px, 4.6vw, 67px); letter-spacing: -.065em; margin-block: 16px 19px; line-height: 1.04; font-weight: 550; }
 .hero-copy h1 > span { color: #63816b; }
 .hero-copy > p:not(.eyebrow) { color: #627065; font-size: 12px; line-height: 1.85; }
+.hero-copy > p:not(.eyebrow) { max-width: 530px; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-top: 23px; }
+.resume-cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 27px; min-height: 43px; font-weight: 550; }
+.footer-resume { margin-left: auto; font-weight: 500; color: var(--green); border-bottom: 1px solid #93a58c; padding-block: 4px; }
 .inline-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 23px; font-size: 11px; font-weight: 550; border-bottom: 1px solid #a8b6a7; padding-block: 5px; }
 .inline-link > span { transition: transform .25s; }
 .inline-link:hover > span { transform: translate(2px, -2px); }
@@ -100,6 +103,13 @@ h2 { font-size: clamp(28px, 3vw, 42px); font-weight: 550; letter-spacing: -.055e
 .project-meta { display: flex; justify-content: space-between; gap: 15px; margin-top: 17px; font: 7px/1.6 var(--mono); letter-spacing: .04em; color: #788371; }
 .project-card h3 { font-size: 25px; letter-spacing: -.045em; margin-top: 8px; }
 .project-card > p { font-size: 11px; line-height: 1.8; color: var(--muted); margin-top: 9px; max-width: 480px; }
+.card-role { display: block; margin-top: 10px; font-size: 10px; font-weight: 550; color: var(--green); }
+.card-details { list-style: none; padding: 0; margin-top: 11px; font-size: 11px; line-height: 1.85; color: #5d6e61; }
+.card-details li { position: relative; padding-left: 13px; margin-top: 5px; }
+.card-details li::before { content: ''; position: absolute; left: 0; top: .78em; height: 3px; width: 3px; background: #8a9e83; border-radius: 50%; }
+.card-read { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 13px; margin-top: 16px; font-size: 10px; font-weight: 550; color: var(--green); }
+.card-read > span { font-size: 17px; transition: transform .2s; }
+.project-card:hover .card-read > span { transform: translate(2px, -2px); }
 .project-tags { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 14px; font: 8px var(--mono); color: #6d7d67; }
 .project-tags > span:not(:last-child)::after { content: '/'; margin-left: 16px; color: #b1b9a8; }
 .work-footnote { display: flex; align-items: center; gap: 12px; padding-top: 25px; margin-top: 35px; border-top: 1px solid var(--line); }
@@ -289,11 +299,11 @@ html[data-motion=off] .reveal { transition: none; opacity: 1; translate: none; }
   .shell { width: calc(100% - 40px); }
   .header-inner { min-height: 76px; gap: 20px; flex-wrap: wrap; padding-block: 15px; }
   .brand { font-size: 16px; gap: 10px; }
-  .brand-mark { width: 34px; height: 34px; font-size: 13px; }
+  .brand-mark { width: 40px; height: 40px; }
   .brand small { font-size: 6px; }
   .site-header nav { gap: 20px; order: 3; width: 100%; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 2px; }
   .site-header nav a { font-size: 10px; padding: 8px 0 3px; }
-  .header-resume { margin-left: auto; font-size: 9px; padding: 6px 11px; gap: 16px; }
+  .header-resume { margin-left: auto; font-size: 10px; padding: 9px 13px; gap: 16px; min-height: 40px; }
   .hero { padding-block: 37px 34px; grid-template-columns: 1fr; gap: 25px; }
   .hero-copy h1 { font-size: clamp(35px, 7.7vw, 53px); margin-block: 15px 18px; }
   .hero-copy > p:not(.eyebrow) { font-size: 12px; max-width: 500px; }
@@ -319,6 +329,7 @@ html[data-motion=off] .reveal { transition: none; opacity: 1; translate: none; }
   .project-meta { font-size: 5px; gap: 8px; margin-top: 13px; }
   .project-card h3 { font-size: 22px; margin-top: 9px; }
   .project-card > p { font-size: 10px; line-height: 1.8; }
+  .card-details { font-size: 10px; }
   .project-tags { gap: 5px 10px; font-size: 6px; line-height: 1.8; }
   .project-tags > span:not(:last-child)::after { margin-left: 10px; }
   .work-footnote { margin-top: 26px; padding-top: 20px; align-items: start; gap: 10px; }
@@ -426,6 +437,7 @@ html[data-motion=off] .reveal { transition: none; opacity: 1; translate: none; }
   .project-meta { font-size: 7px; }
   .project-card h3 { font-size: 25px; }
   .project-card > p { font-size: 11px; }
+  .card-details { font-size: 11px; }
   .project-tags { font-size: 7px; }
   .project-filters { gap: 2px; }
   .project-filters button { font-size: 8px; padding: 6px 8px; }
