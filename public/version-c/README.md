@@ -16,7 +16,7 @@ Built from the user's `Requirement.md` and `Ray Toma Resume (F26) BSMS V2 wip.pd
 1. **Engineering first:** concise introduction, visual project cards, outcomes, individual responsibilities, and technical details.
 2. **Clickable projects:** cards are real links to case-study pages; they support opening in another tab and browser history. The case-study gallery supports expanding drawings and photographs.
 3. **Skills based on the résumé:** CAD, FEA, programming, manufacturing equipment, documentation, certification, languages, and education come from the supplied PDF. There are no invented skill levels or proficiency percentages.
-4. **A little animation:** a restrained moving CAD illustration and a small independently animated body/hair companion. Motion can be paused and follows system reduced-motion settings. The companion reuses B's generated artwork; no new artwork was generated. This is layered web animation, not a Live2D Cubism rig.
+4. **A little animation:** a restrained moving CAD illustration that follows system reduced-motion settings. The about panel uses the user-supplied photograph in `assets/ray-toma-portrait.png` above the résumé link, replacing the generated companion.
 
 References reviewed:
 
@@ -38,3 +38,5 @@ Use the existing Vite dev server and visit `http://localhost:5173/version-c/`. P
 Browser verification covered all filters, card navigation, direct case-study reloads, all gallery image dialogs and keyboard focus restoration, the library and unknown-project state, motion persistence, reduced motion, and résumé printing. Layouts were checked at 320, 390, 768, 1024, and 1440 pixels without horizontal overflow, missing assets, or JavaScript errors.
 
 The revised C design uses an open circular RT monogram instead of the square badge, factual headings and descriptions, expanded project cards on both the homepage and project library, and no navigation links to the Atelier. Styles, scripts, and the mark use `?v=2` to refresh browser caches after this revision.
+
+The résumé photo panel uses the original user-supplied PNG, with a responsive crop and lazy loading. The homepage loads `studio.css?v=3` to refresh cached styles for this change.
